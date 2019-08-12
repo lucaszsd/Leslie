@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<head>
+	<title>Leslie Matrix</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+	<script type="text/javascript" src="assets/functions.js"></script>
+	<script src="assets/canvasjs.min.js"></script>
+	
+
+
+</head>
+
+<body onload = config()>
+
+
+	<div id="container">
+
+		
+		<h1>Leslie Matrix Calculator</h1>
+		
+
+		<hr>
+
+
+		<p>		Matemática e biologia possuem uma interessante relação, enquanto a biologia se encarrega de produzir problemas a matemática,por sua vez, providência modelos que auxiliarão na análise desses diversos problemas.Isso, de fato , ocorre em Dinâmica populacional, ciência essa que estuda a curto e longo prazo mudanças no tamanho e na composição etária das populações. A Dinâmica Populacional lida com a maneira com que as populações são afetadas por taxas de nascimento e morte e por fatores como imigração. Durante esse estudo, podem surgir inúmeras perguntas, quantos humanos se espera que existam na terra em 2057? Que quantidade de salmão podem ser pescada anualmente sem colocar em risco sua população? Como o fator AIDS influenciar´a faixas etárias que constituem a população economicamente ativa do Brasil daqui a 30 anos? Foram criados inúmeros modelos matemáticos capazes de auxiliar a busca da necessidade de encontrar as respostas para essas perguntas, foram elaborados inúmeros modelos matemáticos.
+		</p>
+		<p>		A </strong>Matriz de Leslie</strong> ( também chamada de modelo Leslie) é uma das formas mais conhecidas para descrever o crescimento da população ( e sua distribuição etária projetada), em que a população está fechada para migração e onde apenas o sexo feminino é considerado. O modelo foi descrito pela primeira vez, em 1920, pelo matemático Alfred J. Lotka mas foi formalizado e nomeado, em 1940, por Leslie Patrick Holt (1900-1974).</p>
+		<p>		Dada uma população inicial <strong>(P)</strong>, de fêmeas de determinada espécie, a taxa de fertilidade <strong>(F)</strong>, e a taxa de sobrevivevivencia da faixa <strong>(S)</strong>, é possível estimar a população nas seguintes geração. A matriz dos coeficientes S e F multiplicado pela matriz de população no estágio anterior nos dá a população no próximo.
+		</p>
+		<p>		Cada faixa é uma fração da idade máxima atingida pelas fêmeas dessa população. Quando a taxa de fertilidade é menor que 1, a população tende a diminuir, assim quando a taxa de sobrevivencia, <strong>0 &le; S &le; 1</strong>, é próxima a zero, indica que os membros desta faixa não chegarão a próxima.
+				No formulário aceitam-se de 3 a 10 faixas de idade. Cada faixa é preenchida na ordem <strong>P, F, S</strong>. Ou seja, população inicial, taxa de fertilidade e taxa de sobrevivencia dessa faixa.
+		</p>
+
+		<br>
+
+
+
+		<form id = "inputField" role="form">
+
+			<div id="linha1">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a11"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a12"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a13"  value = "">
+			</div>
+		
+			<div id="linha2">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a21"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a22"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a23"  value = "">
+			</div>
+			
+			<div id="linha3">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a31"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a32"  value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a33"  value = "">
+			</div>
+		
+			<div id="linha4" >
+				<input type="text" onkeyup="somenteNumeros(this)" id="a41" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a42" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a43" value = "">
+			</div>
+	
+			<div id="linha5">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a51" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a52" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a53" value = "">
+			</div>
+	
+			<div id="linha6">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a61" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a62" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a63" value = "">
+			</div>
+		
+			<div id="linha7">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a71" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a72" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a73" value = "">
+			</div>
+			
+			<div id="linha8">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a81" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a82" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a83" value = "">
+			</div>
+		
+			<div id="linha9">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a91" value = "" >
+				<input type="text" onkeyup="somenteNumeros(this)" id="a92" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a93" value = "">
+			</div>
+			<div id="linha10">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a101" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a102" value = "">
+				<input type="text" onkeyup="somenteNumeros(this)" id="a103" value = "">
+			</div>
+
+			<div id = "buttons">
+				<a id="faixa" onclick="show()">nova faixa</a>
+				<a id="remove" onclick="linecancel()">remover</a>
+				<a id="cancel" onclick="cancel()">cancelar</a>
+				<a id="confirm" onclick="confirm()" >confirmar</a>
+			</div>
+		</form>
+			
+
+		<div id="chartContainer" style="height: 450px; width: 700px; padding-top: 25px; margin-right: auto; margin-left: auto;"></div>
+
+		<div id = "result">
+			<br>
+			<br>
+			<p id="resultTxt">Matriz dos coeficientes da espécie:
+
+			</p>
+
+			
+			<table id = "resultField">
+				<tbody>
+					<tr>
+						<td id = "t1_1" ><label id="l1_1"></label></td>
+						<td id = "t1_2" ><label id="l1_2"></label></td>
+						<td id = "t1_3" ><label id="l1_3"></label></td>
+						<td id = "t1_4" ><label id="l1_4"></label></td>
+						<td id = "t1_5" ><label id="l1_5"></label></td>
+						<td id = "t1_6" ><label id="l1_6"></label></td>
+						<td id = "t1_7" ><label id="l1_7"></label></td>
+						<td id = "t1_8" ><label id="l1_8"></label></td>
+						<td id = "t1_9" ><label id="l1_9"></label></td>
+						<td id = "t1_10" ><label id="l1_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t2_1" ><label id="l2_1"></label></td>
+						<td id = "t2_2" ><label id="l2_2"></label></td>
+						<td id = "t2_3" ><label id="l2_3"></label></td>
+						<td id = "t2_4" ><label id="l2_4"></label></td>
+						<td id = "t2_5" ><label id="l2_5"></label></td>
+						<td id = "t2_6" ><label id="l2_6"></label></td>
+						<td id = "t2_7" ><label id="l2_7"></label></td>
+						<td id = "t2_8" ><label id="l2_8"></label></td>
+						<td id = "t2_9" ><label id="l2_9"></label></td>
+						<td id = "t2_10" ><label id="l2_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t3_1" ><label id="l3_1"></label></td>
+						<td id = "t3_2" ><label id="l3_2"></label></td>
+						<td id = "t3_3" ><label id="l3_3"></label></td>
+						<td id = "t3_4" ><label id="l3_4"></label></td>
+						<td id = "t3_5" ><label id="l3_5"></label></td>
+						<td id = "t3_6" ><label id="l3_6"></label></td>
+						<td id = "t3_7" ><label id="l3_7"></label></td>
+						<td id = "t3_8" ><label id="l3_8"></label></td>
+						<td id = "t3_9" ><label id="l3_9"></label></td>
+						<td id = "t3_10" ><label id="l3_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t4_1" ><label id="l4_1"></label></td>
+						<td id = "t4_2" ><label id="l4_2"></label></td>
+						<td id = "t4_3" ><label id="l4_3"></label></td>
+						<td id = "t4_4" ><label id="l4_4"></label></td>
+						<td id = "t4_5" ><label id="l4_5"></label></td>
+						<td id = "t4_6" ><label id="l4_6"></label></td>
+						<td id = "t4_7" ><label id="l4_7"></label></td>
+						<td id = "t4_8" ><label id="l4_8"></label></td>
+						<td id = "t4_9" ><label id="l4_9"></label></td>
+						<td id = "t4_10" ><label id="l4_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t5_1" ><label id="l5_1"></label></td>
+						<td id = "t5_2" ><label id="l5_2"></label></td>
+						<td id = "t5_3" ><label id="l5_3"></label></td>
+						<td id = "t5_4" ><label id="l5_4"></label></td>
+						<td id = "t5_5" ><label id="l5_5"></label></td>
+						<td id = "t5_6" ><label id="l5_6"></label></td>
+						<td id = "t5_7" ><label id="l5_7"></label></td>
+						<td id = "t5_8" ><label id="l5_8"></label></td>
+						<td id = "t5_9" ><label id="l5_9"></label></td>
+						<td id = "t5_10" ><label id="l5_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t6_1" ><label id="l6_1"></label></td>
+						<td id = "t6_2" ><label id="l6_2"></label></td>
+						<td id = "t6_3" ><label id="l6_3"></label></td>
+						<td id = "t6_4" ><label id="l6_4"></label></td>
+						<td id = "t6_5" ><label id="l6_5"></label></td>
+						<td id = "t6_6" ><label id="l6_6"></label></td>
+						<td id = "t6_7" ><label id="l6_7"></label></td>
+						<td id = "t6_8" ><label id="l6_8"></label></td>
+						<td id = "t6_9" ><label id="l6_9"></label></td>
+						<td id = "t6_10" ><label id="l6_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t7_1" ><label id="l7_1"></label></td>
+						<td id = "t7_2" ><label id="l7_2"></label></td>
+						<td id = "t7_3" ><label id="l7_3"></label></td>
+						<td id = "t7_4" ><label id="l7_4"></label></td>
+						<td id = "t7_5" ><label id="l7_5"></label></td>
+						<td id = "t7_6" ><label id="l7_6"></label></td>
+						<td id = "t7_7" ><label id="l7_7"></label></td>
+						<td id = "t7_8" ><label id="l7_8"></label></td>
+						<td id = "t7_9" ><label id="l7_9"></label></td>
+						<td id = "t7_10" ><label id="l7_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t8_1" ><label id="l8_1"></label></td>
+						<td id = "t8_2" ><label id="l8_2"></label></td>
+						<td id = "t8_3" ><label id="l8_3"></label></td>
+						<td id = "t8_4" ><label id="l8_4"></label></td>
+						<td id = "t8_5" ><label id="l8_5"></label></td>
+						<td id = "t8_6" ><label id="l8_6"></label></td>
+						<td id = "t8_7" ><label id="l8_7"></label></td>
+						<td id = "t8_8" ><label id="l8_8"></label></td>
+						<td id = "t8_9" ><label id="l8_9"></label></td>
+						<td id = "t8_10" ><label id="l8_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t9_1" ><label id="l9_1"></label></td>
+						<td id = "t9_2" ><label id="l9_2"></label></td>
+						<td id = "t9_3" ><label id="l9_3"></label></td>
+						<td id = "t9_4" ><label id="l9_4"></label></td>
+						<td id = "t9_5" ><label id="l9_5"></label></td>
+						<td id = "t9_6" ><label id="l9_6"></label></td>
+						<td id = "t9_7" ><label id="l9_7"></label></td>
+						<td id = "t9_8" ><label id="l9_8"></label></td>
+						<td id = "t9_9" ><label id="l9_9"></label></td>
+						<td id = "t9_10" ><label id="l9_10"></label></td>
+					</tr>
+					<tr>
+						<td id = "t10_1" ><label id="l10_1"></label></td>
+						<td id = "t10_2" ><label id="l10_2"></label></td>
+						<td id = "t10_3" ><label id="l10_3"></label></td>
+						<td id = "t10_4" ><label id="l10_4"></label></td>
+						<td id = "t10_5" ><label id="l10_5"></label></td>
+						<td id = "t10_6" ><label id="l10_6"></label></td>
+						<td id = "t10_7" ><label id="l10_7"></label></td>
+						<td id = "t10_8" ><label id="l10_8"></label></td>
+						<td id = "t10_9" ><label id="l10_9"></label></td>
+						<td id = "t10_10" ><label id="l10_10"></label></td>
+					</tr>
+		
+				</tbody>
+			</table>
+
+		</div>
+		
+	
+	<hr>
+
+	
+
+
+	</div>
+
+	<footer>
+ 		 <p id="footer">Contact information: <a href="mailto:lzsd@cin.ufpe.br">lzsd@cin.ufpe.br</a></p>
+	</footer>
+		
+
+
+
+</body>
